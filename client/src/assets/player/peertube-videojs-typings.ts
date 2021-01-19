@@ -143,6 +143,8 @@ type P2PMediaLoaderPluginOptions = {
   startTime: number | string
 }
 
+type ChromecastPluginOptions = {}
+
 type VideoJSPluginOptions = {
   playlist?: PlaylistPluginOptions
 
@@ -151,6 +153,8 @@ type VideoJSPluginOptions = {
   webtorrent?: WebtorrentPluginOptions
 
   p2pMediaLoader?: P2PMediaLoaderPluginOptions
+
+  chromecast: ChromecastPluginOptions
 }
 
 type LoadedQualityData = {

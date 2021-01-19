@@ -125,6 +125,7 @@
     "videojs-contrib-quality-levels": "^2.0.9",
     "videojs-dock": "^2.0.2",
     "videojs-hotkeys": "^0.2.27",
+    "@silvermine/videojs-chromecast": "~1.2",
     "videostream": "~3.2.1",
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-cli": "^3.0.8",

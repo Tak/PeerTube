@@ -20,6 +20,7 @@ import './videojs-components/settings-panel-child'
 import './videojs-components/theater-button'
 import './playlist/playlist-plugin'
 import videojs from 'video.js'
+import chromecast from '@silvermine/videojs-chromecast'
 import { isDefaultLocale } from '@shared/core-utils/i18n'
 import { VideoFile } from '@shared/models'
 import { RedundancyUrlManager } from './p2p-media-loader/redundancy-url-manager'
@@ -216,6 +217,7 @@ export class PeertubePlayerManager {
 
     let autoplay = this.getAutoPlayValue(commonOptions.autoplay)
     let html5 = {}
+    chromecast(videojs, {})
 
     const plugins: VideoJSPluginOptions = {
       peertube: {
@@ -227,7 +229,8 @@ export class PeertubePlayerManager {
         subtitle: commonOptions.subtitle,
         videoCaptions: commonOptions.videoCaptions,
         stopTime: commonOptions.stopTime
-      }
+      },
+      chromecast: {}
     }
 
     if (commonOptions.playlist) {
@@ -252,6 +255,7 @@ export class PeertubePlayerManager {
     }
 
     const videojsOptions = {
+      techOrder: ['chromecast', 'html5'],
       html5,
 
       // We don't use text track settings for now
